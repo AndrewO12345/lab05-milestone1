@@ -39,8 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
                 // startActivity(new Intent(this, add.class));
                 return true;
             case R.id.logout:
-                // Log.i("Info", "Button Pressed");
-                // startActivity(new Intent(this, logout.class));
+                startActivity(new Intent(this, MainActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
