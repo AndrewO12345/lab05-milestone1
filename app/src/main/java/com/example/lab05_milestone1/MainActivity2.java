@@ -4,7 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.content.Context;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -19,5 +24,26 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
         String str = intent.getStringExtra("Message");
         textView.setText("Welcome " + str + "!");
+
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add:
+                // startActivity(new Intent(this, add.class));
+                return true;
+            case R.id.logout:
+                // Log.i("Info", "Button Pressed");
+                // startActivity(new Intent(this, logout.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
