@@ -1,6 +1,7 @@
 package com.example.lab05_milestone1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.collection.CircularArray;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    public static ArrayList<Note> notes;
     TextView textView;
 
     @Override
@@ -36,7 +38,7 @@ public class MainActivity2 extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE,null);
 
         DBHelper helper = new DBHelper(sqLiteDatabase);
-        ArrayList<Note> notes = helper.readNotes(str);
+        notes = helper.readNotes(str);
 
         ArrayList<String> displayNotes = new ArrayList<>();
         for (Note note : notes) {
