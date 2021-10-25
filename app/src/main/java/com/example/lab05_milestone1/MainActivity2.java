@@ -36,10 +36,9 @@ public class MainActivity2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add:
-                // startActivity(new Intent(this, add.class));
+                startActivity(new Intent(this, MainActivity3.class));
                 return true;
             case R.id.logout:
-                Intent intent = new Intent(this, MainActivity.class);
                 SharedPreferences sharedPreferences = getSharedPreferences("com.example.lab05_milestone1", Context.MODE_PRIVATE);
                 sharedPreferences.edit().remove("username").apply();
                 startActivity(new Intent(this, MainActivity.class));
