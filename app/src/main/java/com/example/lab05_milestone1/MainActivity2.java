@@ -3,8 +3,8 @@ package com.example.lab05_milestone1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -39,6 +39,9 @@ public class MainActivity2 extends AppCompatActivity {
                 // startActivity(new Intent(this, add.class));
                 return true;
             case R.id.logout:
+                Intent intent = new Intent(this, MainActivity.class);
+                SharedPreferences sharedPreferences = getSharedPreferences("com.example.lab05_milestone1", Context.MODE_PRIVATE);
+                sharedPreferences.edit().remove("username").apply();
                 startActivity(new Intent(this, MainActivity.class));
                 return true;
             default:
